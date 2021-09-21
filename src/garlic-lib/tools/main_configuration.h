@@ -51,6 +51,8 @@ class MainConfiguration  : public QObject
         void            setAdditionalVersion(QString value);
         void            setAppName(QString value){app_name = value;}
         QString         getAppName(){return app_name;}
+        QString         getDefaultURLName(){return default_url_name;}
+        QString         getDefaultURL(){return default_url;}
         QString         getDescription() {return "SMIL Player for Digital Signage";}
 
         static QString  log_directory;
@@ -75,8 +77,8 @@ class MainConfiguration  : public QObject
         QString         getValidatedContentUrl() const {return validated_content_url;}
         QString         getIndexPath(){return index_path;}
         QString         getTimeZone() const {return time_zone;}
-        QString         getBasePath() const{return base_path;};
-        QString         getErrorText() const {return error_text;};
+        QString         getBasePath() const{return base_path;}
+        QString         getErrorText() const {return error_text;}
 
         void            setValidatedContentUrl(const QString &value);
         QString         getLastPlayedIndexPath();
@@ -109,7 +111,9 @@ protected:
         QString         time_zone = "";
         QString         cache_dir = "";
         QString         log_dir = "";
-        QString         app_name = "garlic-player";
+        QString         app_name = "GPlayer";
+        QString         default_url_name = "Spectro:o DMS";
+        QString         default_url = "https://dms.getconnected.ro/gp-index";
         QString         error_text = "";
         void            createDirectoryIfNotExist(QString path);
         void            determineIndexPath();

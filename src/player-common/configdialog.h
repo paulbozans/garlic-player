@@ -3,7 +3,6 @@
 
 #include "tools/main_configuration.h"
 #include <QDialog>
-
 namespace Ui
 {
     class ConfigDialog;
@@ -26,6 +25,9 @@ protected:
 
     protected slots:
         void accept();
+
+     private slots:
+        void on_defUrlButton_clicked();
 
 };
 

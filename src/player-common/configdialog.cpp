@@ -1,5 +1,5 @@
 #include "configdialog.h"
-
+#include <QPushButton>
 ConfigDialog::ConfigDialog(QWidget *parent, MainConfiguration *Config) :  QDialog(parent), ui(new Ui::ConfigDialog)
 {
     ui->setupUi(this);
@@ -10,7 +10,11 @@ ConfigDialog::ConfigDialog(QWidget *parent, MainConfiguration *Config) :  QDialo
     // cause in Android it shows fullscreen and not as dialog
     setWindowFlags(Qt::WindowStaysOnTopHint);
 #endif
-
+    QPushButton *defUrlButton = new QPushButton("Use default CMS",this);
+    defUrlButton->setStyleSheet("margin-right:50px");
+    ui->buttonBox->addButton(defUrlButton,QDialogButtonBox::ActionRole);
+    connect(defUrlButton,SIGNAL(clicked()),this,SLOT(on_defUrlButton_clicked()));
+    ui->labelContentUrl->setText("<html><head/><body><p>Content-URL (You can use "+MyConfiguration->getDefaultURLName()+" "+MyConfiguration->getDefaultURL()+")</p></body></html>");
 }
 
 ConfigDialog::~ConfigDialog()
@@ -36,6 +40,12 @@ void ConfigDialog::accept()
     }
     else
         ui->labelErrorMessage->setText(MyConfiguration->getErrorText());
+}
+
+void ConfigDialog::on_defUrlButton_clicked()
+{
+
+    ui->lineEditContentUrl->setText(MyConfiguration->getDefaultURL());
 }
 
 
