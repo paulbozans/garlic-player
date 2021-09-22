@@ -46,6 +46,7 @@ class BaseMedia : public BaseTimings
         void                   setRegion(Region r);
         QString                getRegionName();
         QString                getFit()          {return fit;}
+        QString                getMediaAlign()   {return mediaAlign;}
         QString                getSrc()          {return src;}
         QString                getLogContentId() {return log_content_id;}
         QString                getFileName()     {return filename;}
@@ -76,6 +77,7 @@ class BaseMedia : public BaseTimings
         QString                src             = "";
         QString                type            = "";
         QString                fit             = "";
+        QString                mediaAlign      = "topLeft";
         QString                filename        = "";
         int                    cache_control   = 0;
         QString                log_content_id  = "";

@@ -9,3 +9,9 @@ libios
 *.pro.user
 ./*.sh
 ./*.bat
+gcc_64-build-5.12.6-release/*
+android_armv7-build-5.12.6-release/*
+*.autosave
+*.swp
+*.apk
+DONOTCOMMIT_scripts/*

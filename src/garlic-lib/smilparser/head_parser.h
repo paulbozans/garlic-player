@@ -48,7 +48,8 @@ struct Region
     qreal height = 1;
     int z_index = 0;
     QString fit              = "hidden";
-    QString soundLevel      = "100%";
+    QString mediaAlign       = "mediaAlign";
+    QString soundLevel       = "100%";
     QString backgroundColor  = "transparent";
     QString backgroundImage  = "none";
     QString backgroundRepeat = "repeat";

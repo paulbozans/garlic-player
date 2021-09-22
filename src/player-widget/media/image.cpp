@@ -88,6 +88,28 @@ void PlayerImage::changeSize(int w, int h)
         ImageWidget.data()->setPixmap(loaded_image.scaled(w, h, Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation));
     else
         ImageWidget.data()->setPixmap(loaded_image);
+
+    QString mediaAlign = SmilMedia->getMediaAlign().toLower();
+    if(mediaAlign == "center")
+        ImageWidget.data()->setAlignment(Qt::AlignCenter | Qt::AlignCenter);
+    else if(mediaAlign == "topleft")
+        ImageWidget.data()->setAlignment(Qt::AlignTop | Qt::AlignLeft);
+    else if(mediaAlign == "topmid")
+        ImageWidget.data()->setAlignment(Qt::AlignTop | Qt::AlignHCenter);
+    else if(mediaAlign == "topright")
+        ImageWidget.data()->setAlignment(Qt::AlignTop | Qt::AlignRight);
+    else if(mediaAlign == "midleft")
+        ImageWidget.data()->setAlignment(Qt::AlignVCenter | Qt::AlignLeft);
+    else if(mediaAlign == "midright")
+        ImageWidget.data()->setAlignment(Qt::AlignVCenter | Qt::AlignRight);
+    else if(mediaAlign == "bottomleft")
+        ImageWidget.data()->setAlignment(Qt::AlignBottom | Qt::AlignLeft);
+    else if(mediaAlign == "bottommid")
+        ImageWidget.data()->setAlignment(Qt::AlignBottom | Qt::AlignHCenter);
+    else if(mediaAlign == "bottomright")
+        ImageWidget.data()->setAlignment(Qt::AlignBottom | Qt::AlignRight);
+    else
+        ImageWidget.data()->setAlignment(Qt::AlignTop | Qt::AlignLeft);
 }
 
 QWidget *PlayerImage::getView()

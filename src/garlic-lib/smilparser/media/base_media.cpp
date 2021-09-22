@@ -144,6 +144,7 @@ void BaseMedia::parseBaseMediaAttributes()
 
     region_name = getAttributeFromRootElement("region", "");
     fit    = getAttributeFromRootElement("fit", "");
+    mediaAlign    = getAttributeFromRootElement("mediaAlign", "topLeft");
     // maybe obsolete 2021-04-21
    //  type   = getAttributeFromRootElement("type");
     MyExpr.setExpression(getAttributeFromRootElement("expr", ""));
