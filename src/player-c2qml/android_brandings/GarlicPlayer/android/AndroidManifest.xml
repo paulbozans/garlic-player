@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.sagiadinos.garlic.player" android:versionName="v0.4.0.558" android:versionCode="558" android:installLocation="auto">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.sagiadinos.garlic.player" android:versionName="v0.4.0.559" android:versionCode="559" android:installLocation="auto">
   <!--
     niko:  android:usesCleartextTraffic="true"
     for Android10  android:requestLegacyExternalStorage="true"

@@ -94,6 +94,7 @@ Binaries can be downloaded at [garlic-player.com](https://garlic-player.com). Yo
 #### Attributes for media
 - **region**
 - **fit** fill|meet|meetbest
+- **mediaAlign** (only for images) topLeft|topMid|topRight|midLeft|center|midRight|bottomLeft|bottomMid|bottomRight 
 
 #### Attributes for mbrush
 - **color** color in CSS Stsyle
@@ -163,3 +164,4 @@ Binaries can be downloaded at [garlic-player.com](https://garlic-player.com). Yo
 
 
 Contact: [Nikolaos Sagiadinos] (mailto:ns@smil-control.com)
+	 [Paul Bozan] (paul.bozan@spectroo.eu)
