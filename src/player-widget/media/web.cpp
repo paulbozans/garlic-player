@@ -103,6 +103,16 @@ void PlayerWeb::doLoadFinished(bool has_succeeded)
     {
         QString code = QStringLiteral("document.body.style.overflow = 'hidden';");
         browser->page()->runJavaScript(code);
+        //apply zoom_factor
+        browser->setZoomFactor(SmilMedia->getZoomFactor());
+        //run extra js on page
+        QVariantList jsList = SmilMedia->getExtraJSList();
+        for (QVariantList::iterator j = jsList.begin(); j != jsList.end(); j++)
+        {
+            QString jsCode =(*j).toString();
+            browser->page()->runJavaScript(jsCode+";");
+        }
+
     }
 }
 

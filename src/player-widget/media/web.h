@@ -25,7 +25,7 @@ class PlayerWeb : public PlayerBaseMedia
     protected slots:
         void             doLoadFinished(bool has_succeeded);
     private:
-        QString          sanitizeUri(QString uri);
+        QString          sanitizeUri(QString uri);        
 };
 
 #endif // WEB_H

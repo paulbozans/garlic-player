@@ -18,6 +18,7 @@
 
 #include "web.h"
 
+
 TWeb::TWeb(Files::MediaManager *mm, MainConfiguration *config, SmilHead::PlaceHolder *ph, QObject *parent) : BaseMedia(mm, config, ph, parent)
 {
     setObjectName("TWeb");
@@ -54,7 +55,7 @@ void TWeb::prepareDurationTimers()
 void TWeb::setAttributes()
 {
     parseBaseMediaAttributes();
-    src        = getAttributeFromRootElement("src", "");
+    src        = getAttributeFromRootElement("src", "");    
 }
 
 void TWeb::prepareDurationTimersForRepeat()

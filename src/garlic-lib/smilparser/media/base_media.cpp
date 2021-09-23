@@ -144,7 +144,7 @@ void BaseMedia::parseBaseMediaAttributes()
 
     region_name = getAttributeFromRootElement("region", "");
     fit    = getAttributeFromRootElement("fit", "");
-    mediaAlign    = getAttributeFromRootElement("mediaAlign", "topLeft");
+    media_align    = getAttributeFromRootElement("mediaAlign", "topLeft");
     // maybe obsolete 2021-04-21
    //  type   = getAttributeFromRootElement("type");
     MyExpr.setExpression(getAttributeFromRootElement("expr", ""));
@@ -194,6 +194,11 @@ void BaseMedia::setAdditionalParameters(QDomElement param)
     {
         log_content_id = param.attribute("value");
     }
+    else if (param.attribute("name") == "pageExtraSettings")
+    {
+        decodePageExtraSettings(param.attribute("value"));
+
+    }
 }
 
 int BaseMedia::determineCacheControl(QString value)
@@ -203,5 +208,39 @@ int BaseMedia::determineCacheControl(QString value)
         return CACHE_CONTROL_ONLY_IF_CACHED;
     }
     return CACHE_CONTROL_USE_CACHE;
+}
+
+void BaseMedia::decodePageExtraSettings(QString pageExtraSettings){
+    try {
+        if(!pageExtraSettings.trimmed().isEmpty()){
+            QByteArray text = QByteArray::fromBase64(pageExtraSettings.toUtf8());
+            auto json_doc=QJsonDocument::fromJson(text);
+
+            if(json_doc.isNull()){
+                qDebug()<< src + " - Failed to create JSON doc.";
+                return;
+
+            }
+            if(!json_doc.isObject()){
+                qDebug()<< src+" - JSON is not an object.";
+                return;
+            }
+
+            QJsonObject json_obj=json_doc.object();
+
+            if(json_obj.isEmpty()){
+                qDebug()<<src+" - JSON object is empty.";
+                return;
+            }
+
+            QVariantMap root_map = json_obj.toVariantMap();
+            extra_js = root_map["extra_js"].toList();
+            zoom_factor = QString::number(json_obj.value("scale_factor").toDouble(), 'f', 2).toDouble();
+
+          }
+        } catch (...) {
+            qDebug() << "extraParams decoding failed for "+src;
+        }
+
 }
 

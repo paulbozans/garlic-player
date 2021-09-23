@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<smil>
+	<head>
+		<meta name="title" content="Testing different webpages, zoom factors and JavaScript automation" />
+		<layout>
+			<root-layout id="display:0" width="1920" height="1080" />
+			<region regionName="screen" top="0" left="0" width="1920" height="1080" z-index="1"/>
+		</layout>
+	</head>
+	<body>
+	<!--
+	    !! pageExtraSettings value is base64 encoded
+
+            1. bing.com scale factor 1 (zoom 100%), no JavaScript, 10s, JSON: {"scale_factor":1,"extra_js":[]}
+            2. bing.com scale factor 0.3 (zoom 50%), no JavaScript, 10s, JSON: {"scale_factor":0.3,"extra_js":[]}
+            3. google.com scale factor 0.85 , some JavaScript automation (accept terms and conditions and search for garlic-player), 10S
+               JSON: {
+                      "scale_factor":0.85,
+                      "extra_js":[
+                                   "document.querySelector(\"body > div.css-1u2nk9f > div.css-4nl6qi > div.css-4rbxuz\").click()",
+                                   "document.querySelector(\"#coachmark > div.css-odo4pv\").click()",
+                                   "document.querySelector(\"#L2AGLb\").click();",
+                                   "document.querySelector('[name=\"q\"]').value = \"garlic-player\";",
+                                   "document.querySelector('[name=\"btnK\"]').click()"
+                                 ]
+                     }
+           -->
+           <text src="https://www.bing.com" dur="10s" title="https://www.bing.com" >
+                  <param name="pageExtraSettings" value="eyJzY2FsZV9mYWN0b3IiOjEsImV4dHJhX2pzIjpbXX0=" />
+           </text>
+           <text src="https://www.bing.com" dur="10s" title="https://www.bing.com" >
+                  <param name="pageExtraSettings" value="eyJzY2FsZV9mYWN0b3IiOjAuMywiZXh0cmFfanMiOltdfQ==" />
+           </text>
+           <text src="https://www.google.com" dur="10s" title="https://www.google.com" >
+                 <param name="pageExtraSettings" value="ewogICAgICAgICAgICAgICAgICAgICAgInNjYWxlX2ZhY3RvciI6MC44NSwKICAgICAgICAgICAgICAgICAgICAgICJleHRyYV9qcyI6WwogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICJkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiYm9keSA+IGRpdi5jc3MtMXUybms5ZiA+IGRpdi5jc3MtNG5sNnFpID4gZGl2LmNzcy00cmJ4dXpcIikuY2xpY2soKSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgImRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIjY29hY2htYXJrID4gZGl2LmNzcy1vZG80cHZcIikuY2xpY2soKSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgImRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIjTDJBR0xiXCIpLmNsaWNrKCk7IiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAiZG9jdW1lbnQucXVlcnlTZWxlY3RvcignW25hbWU9XCJxXCJdJykudmFsdWUgPSBcImdhcmxpYy1wbGF5ZXJcIjsiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICJkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCdbbmFtZT1cImJ0bktcIl0nKS5jbGljaygpIgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBdIAogICAgICAgICAgICAgICAgICAgICB9Cg==" />
+           </text>
+
+	</body>
+</smil>

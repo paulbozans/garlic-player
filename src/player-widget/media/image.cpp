@@ -89,24 +89,24 @@ void PlayerImage::changeSize(int w, int h)
     else
         ImageWidget.data()->setPixmap(loaded_image);
 
-    QString mediaAlign = SmilMedia->getMediaAlign().toLower();
-    if(mediaAlign == "center")
+    QString media_align = SmilMedia->getMediaAlign().toLower();
+    if(media_align == "center")
         ImageWidget.data()->setAlignment(Qt::AlignCenter | Qt::AlignCenter);
-    else if(mediaAlign == "topleft")
+    else if(media_align == "topleft")
         ImageWidget.data()->setAlignment(Qt::AlignTop | Qt::AlignLeft);
-    else if(mediaAlign == "topmid")
+    else if(media_align == "topmid")
         ImageWidget.data()->setAlignment(Qt::AlignTop | Qt::AlignHCenter);
-    else if(mediaAlign == "topright")
+    else if(media_align == "topright")
         ImageWidget.data()->setAlignment(Qt::AlignTop | Qt::AlignRight);
-    else if(mediaAlign == "midleft")
+    else if(media_align == "midleft")
         ImageWidget.data()->setAlignment(Qt::AlignVCenter | Qt::AlignLeft);
-    else if(mediaAlign == "midright")
+    else if(media_align == "midright")
         ImageWidget.data()->setAlignment(Qt::AlignVCenter | Qt::AlignRight);
-    else if(mediaAlign == "bottomleft")
+    else if(media_align == "bottomleft")
         ImageWidget.data()->setAlignment(Qt::AlignBottom | Qt::AlignLeft);
-    else if(mediaAlign == "bottommid")
+    else if(media_align == "bottommid")
         ImageWidget.data()->setAlignment(Qt::AlignBottom | Qt::AlignHCenter);
-    else if(mediaAlign == "bottomright")
+    else if(media_align == "bottomright")
         ImageWidget.data()->setAlignment(Qt::AlignBottom | Qt::AlignRight);
     else
         ImageWidget.data()->setAlignment(Qt::AlignTop | Qt::AlignLeft);
