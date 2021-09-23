@@ -128,6 +128,7 @@ SOURCES += \
     tools/resource_monitor.cpp
 
 HEADERS += \
+    branding.h \
     files/base_manager.h \
     files/download_factory.h \
     files/downloader.h \

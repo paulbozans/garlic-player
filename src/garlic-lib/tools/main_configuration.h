@@ -27,6 +27,7 @@
 #include <QString>
 #include "logger.h"
 #include "version.h"
+#include "branding.h"
 
 
 /**
@@ -111,9 +112,9 @@ protected:
         QString         time_zone = "";
         QString         cache_dir = "";
         QString         log_dir = "";
-        QString         app_name = "GPlayer";
-        QString         default_url_name = "Spectro:o DMS";
-        QString         default_url = "https://dms.getconnected.ro/gp-index";
+        QString         app_name = garlic_app_name;
+        QString         default_url_name = garlic_def_url_name;
+        QString         default_url = garlic_def_url;
         QString         error_text = "";
         void            createDirectoryIfNotExist(QString path);
         void            determineIndexPath();

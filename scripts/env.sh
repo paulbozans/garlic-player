@@ -27,6 +27,8 @@ else
 	source $SCRIPTDIR/writeVersionFromGithub.sh
 fi
 
+source $SCRIPTDIR/applyBrandings.sh
+
 export DEPLOY_SUFFIX=$GARLIC_VERSION
 
 # create diretory for deployed files
