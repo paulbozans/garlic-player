@@ -1,1 +1,1 @@
-#define version_from_git "v0.4.0.561"
+#define version_from_git "v0.4.0.562"

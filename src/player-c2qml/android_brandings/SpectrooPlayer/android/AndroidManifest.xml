@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.sagiadinos.garlic.player" android:versionName="v0.4.0.561" android:versionCode="561" android:installLocation="auto">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.sagiadinos.garlic.player" android:versionName="v0.4.0.562" android:versionCode="562" android:installLocation="auto">
   <!--
     niko:  android:usesCleartextTraffic="true"
     for Android10  android:requestLegacyExternalStorage="true"
 -->
-  <application android:hardwareAccelerated="true" android:name="org.qtproject.qt5.android.bindings.QtApplication" android:label="spectroo-player" android:icon="@drawable/icon">
-    <activity android:configChanges="orientation|uiMode|screenLayout|screenSize|smallestScreenSize|layoutDirection|locale|fontScale|keyboard|keyboardHidden|navigation" android:name="com.sagiadinos.garlic.player.java.GarlicActivity" android:label="spectroo-layer" android:screenOrientation="unspecified" android:launchMode="singleTop">
+  <application android:hardwareAccelerated="true" android:name="org.qtproject.qt5.android.bindings.QtApplication" android:label="GPlayer" android:icon="@drawable/icon">
+    <activity android:configChanges="orientation|uiMode|screenLayout|screenSize|smallestScreenSize|layoutDirection|locale|fontScale|keyboard|keyboardHidden|navigation" android:name="com.sagiadinos.garlic.player.java.GarlicActivity" android:label="GPlayer" android:screenOrientation="unspecified" android:launchMode="singleTop">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
         <category android:name="android.intent.category.LAUNCHER"/>
@@ -60,7 +60,7 @@
     <receiver android:name="com.sagiadinos.garlic.player.java.ConfigReceiver" android:enabled="true"/>
     <!-- For adding service(s) please check: https://wiki.qt.io/AndroidServices -->
   </application>
-  <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="29"/>
+  <uses-sdk android:minSdkVersion="21"/>
   <supports-screens android:largeScreens="true" android:normalScreens="true" android:anyDensity="true" android:smallScreens="true"/>
   <!-- The following comment will be replaced upon deployment with default permissions based on the dependencies of the application.
          Remove the comment if you do not require these default permissions. -->

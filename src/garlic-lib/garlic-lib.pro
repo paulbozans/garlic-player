@@ -213,5 +213,6 @@ HEADERS += \
     lib_facade.h \
     version.h
 
-DISTFILES +=
+DISTFILES += \
+    branding.h.in
 
