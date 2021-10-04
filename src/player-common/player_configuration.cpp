@@ -49,6 +49,20 @@ void PlayerConfiguration::printVersionInformation()
     qInfo() << MyMainConfiguration->getAppName()+ ": " + MyMainConfiguration->getVersion() << " Operating System:" << MyMainConfiguration->getOS();
 }
 
+QString PlayerConfiguration::determineDefaultAppName()
+{
+    QString ret = "garlic-player";
+    QString tmp = "";
+
+#ifdef DEFAULT_APP_NAME
+    tmp = STRINGIFY(DEFAULT_APP_NAME);
+    if (tmp != "")
+        ret = tmp;
+#endif
+
+    return ret;
+}
+
 QString PlayerConfiguration::determineDefaultContentUrlName()
 {
     QString ret = "SmilControl";

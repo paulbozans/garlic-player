@@ -22,6 +22,7 @@ public:
     void setSmilIndexUriFromLauncher(QString value);
     void setVersionFromLauncher(QString value);
     void printVersionInformation();
+    static QString determineDefaultAppName();
     static QString determineDefaultContentUrlName();
     static QString determineDefaultContentUrl();
 private:

@@ -38,6 +38,7 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
     MainConfiguration    *MyMainConfiguration   = new MainConfiguration(
                                                         new QSettings(QSettings::IniFormat, QSettings::UserScope, "SmilControl", "garlic-player"),
+                                                        PlayerConfiguration::determineDefaultAppName(),
                                                         PlayerConfiguration::determineDefaultContentUrlName(),
                                                         PlayerConfiguration::determineDefaultContentUrl()
 

@@ -128,7 +128,6 @@ SOURCES += \
     tools/resource_monitor.cpp
 
 HEADERS += \
-    branding.h \
     files/base_manager.h \
     files/download_factory.h \
     files/downloader.h \
@@ -212,7 +211,4 @@ HEADERS += \
     db/inventory_table.h \
     lib_facade.h \
     version.h
-
-DISTFILES += \
-    branding.h.in
 

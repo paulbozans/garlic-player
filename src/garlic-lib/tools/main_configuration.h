@@ -27,7 +27,6 @@
 #include <QString>
 #include "logger.h"
 #include "version.h"
-#include "branding.h"
 
 
 /**
@@ -47,7 +46,7 @@ class MainConfiguration  : public QObject
         const     QString        OS_WINDOWS  = "windows";
         const     QString        OS_UNKNOWN  = "unknown";
 
-        explicit        MainConfiguration(QSettings *uc, QString dun, QString dcu, QObject *parent = Q_NULLPTR);
+        explicit        MainConfiguration(QSettings *uc, QString dan, QString dun, QString dcu, QObject *parent = Q_NULLPTR);
         QString         getVersion(){return version;}
         void            setAdditionalVersion(QString value);
         void            setAppName(QString value){app_name = value;}

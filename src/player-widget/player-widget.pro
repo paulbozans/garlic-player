@@ -16,6 +16,9 @@ INCLUDEPATH += ../ext/zlib/includes
 INCLUDEPATH += ../garlic-lib/
 Release:DEFINES += QT_NO_DEBUG_OUTPUT
 
+#defines for using different app name
+#DEFINES += DEFAULT_APP_NAME=garlic-player
+
 # defines for using different default content_url per player
 # remarks:
 # protocol must be seperate from url cause the double slash // cut string and no escape sequence helped
