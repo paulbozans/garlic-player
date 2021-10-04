@@ -52,8 +52,8 @@ class MainConfiguration  : public QObject
         void            setAdditionalVersion(QString value);
         void            setAppName(QString value){app_name = value;}
         QString         getAppName(){return app_name;}
-        QString         getDefaultURLName(){return default_url_name;}
-        QString         getDefaultURL(){return default_url;}
+        QString         getDefaultURLName(){return default_content_url_name;}
+        QString         getDefaultURL(){return default_content_url;}
         QString         getDescription() {return "SMIL Player for Digital Signage";}
 
         static QString  log_directory;
