@@ -10,6 +10,18 @@ INCLUDEPATH +=../ext/quazip/includes
 INCLUDEPATH += ../garlic-lib/
 DEFINES     += QT_DEPRECATED_WARNINGS
 
+
+#defines for using different app name
+DEFINES += DEFAULT_APP_NAME=GPlayer
+
+# defines for using different default content_url per player
+# remarks:
+# protocol must be seperate from url cause the double slash // cut string and no escape sequence helped
+# & and must be escaped => \&
+DEFINES += DEFAULT_CONTENT_URL_NAME=Spectroo.DMS
+DEFINES += DEFAULT_CONTENT_URL_PROTOCOL=https
+DEFINES += DEFAULT_CONTENT_URL=dms.getconnected.ro/gp-index
+
 Release:DEFINES += QT_NO_DEBUG_OUTPUT
 
 #comment out the next line when you want to use QTMultimedia instead of QtAV

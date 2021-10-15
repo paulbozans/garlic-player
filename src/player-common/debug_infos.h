@@ -1,6 +1,7 @@
 #ifndef DEBUGINFOS_H
 #define DEBUGINFOS_H
 
+#include "../player-common/configdialog.h"
 #include <QDialog>
 #include <QMap>
 #include "lib_facade.h"
@@ -33,6 +34,7 @@ class DebugInfos : public QDialog
         QString                preparePlayedMediaText(BaseMedia *media);
 
     private slots:
+        int on_open_config_clicked();
         void on_close_dialog_clicked();
         void on_close_player_clicked();
 

@@ -94,3 +94,12 @@ void DebugInfos::on_close_player_clicked()
 {
     QDialog::accept();
 }
+
+int DebugInfos::on_open_config_clicked()
+{
+
+    QDialog::close();
+    ConfigDialog MyConfigDialog(Q_NULLPTR, MyLibFacade->getConfiguration());
+    return MyConfigDialog.exec();
+}
+

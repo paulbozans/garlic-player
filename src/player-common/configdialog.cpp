@@ -11,7 +11,7 @@ ConfigDialog::ConfigDialog(QWidget *parent, MainConfiguration *Config) :  QDialo
     setWindowFlags(Qt::WindowStaysOnTopHint);
 #endif
     QPushButton *defUrlButton = new QPushButton("Use default CMS",this);
-    defUrlButton->setStyleSheet("margin-right:50px");
+    defUrlButton->setStyleSheet("margin-right:50px;height:100%;min-width:180px;");
     ui->buttonBox->addButton(defUrlButton,QDialogButtonBox::ActionRole);
     connect(defUrlButton,SIGNAL(clicked()),this,SLOT(on_defUrlButton_clicked()));
     ui->labelContentUrl->setText("<html><head/><body><p>Content-URL (You can use "+MyConfiguration->getDefaultURLName()+" "+MyConfiguration->getDefaultURL()+")</p></body></html>");

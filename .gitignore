@@ -15,3 +15,4 @@ android_armv7-build-5.12.6-release/*
 *.swp
 *.apk
 DONOTCOMMIT_scripts/*
+spectroo-player_android/*
