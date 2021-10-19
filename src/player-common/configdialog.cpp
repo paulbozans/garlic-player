@@ -6,12 +6,13 @@ ConfigDialog::ConfigDialog(QWidget *parent, MainConfiguration *Config) :  QDialo
     MyConfiguration = Config;
     ui->lineEditPlayerName->setText(MyConfiguration->getPlayerName());
     ui->lineEditContentUrl->setText(MyConfiguration->getIndexUri());
+    QPushButton *defUrlButton = new QPushButton("Use default CMS",this);
+    defUrlButton->setStyleSheet("margin-right:50px;height:100%;min-width:180px;");
 #if !defined  Q_OS_ANDROID
+    defUrlButton->setStyleSheet("margin-right:50px;min-height:25px;min-width:180px;");
     // cause in Android it shows fullscreen and not as dialog
     setWindowFlags(Qt::WindowStaysOnTopHint);
 #endif
-    QPushButton *defUrlButton = new QPushButton("Use default CMS",this);
-    defUrlButton->setStyleSheet("margin-right:50px;height:100%;min-width:180px;");
     ui->buttonBox->addButton(defUrlButton,QDialogButtonBox::ActionRole);
     connect(defUrlButton,SIGNAL(clicked()),this,SLOT(on_defUrlButton_clicked()));
     ui->labelContentUrl->setText("<html><head/><body><p>Content-URL (You can use "+MyConfiguration->getDefaultURLName()+" "+MyConfiguration->getDefaultURL()+")</p></body></html>");
