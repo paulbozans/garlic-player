@@ -18,6 +18,7 @@ Release:DEFINES += QT_NO_DEBUG_OUTPUT
 
 #defines for using different app name
 #DEFINES += DEFAULT_APP_NAME=garlic-player
+DEFINES += DEFAULT_APP_NAME=GPlayer
 
 # defines for using different default content_url per player
 # remarks:
@@ -26,6 +27,9 @@ Release:DEFINES += QT_NO_DEBUG_OUTPUT
 #DEFINES += DEFAULT_CONTENT_URL_NAME=SmilControl
 #DEFINES += DEFAULT_CONTENT_URL_PROTOCOL=http
 #DEFINES += DEFAULT_CONTENT_URL=indexes.smil-control.com/index.php?site=get_index\&owner_id=12
+DEFINES += DEFAULT_CONTENT_URL_NAME=SpectrooDMS
+DEFINES += DEFAULT_CONTENT_URL_PROTOCOL=https
+DEFINES += DEFAULT_CONTENT_URL=dms.getconnected.ro/gp-index
 
 # which media backend should be used: support_qtav support_qtmm support_libvlc
 CONFIG   += support_qtav

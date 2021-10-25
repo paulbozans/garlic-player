@@ -16,3 +16,4 @@ android_armv7-build-5.12.6-release/*
 *.apk
 DONOTCOMMIT_scripts/*
 spectroo-player_android/*
+3.1_buildWindows.bat
