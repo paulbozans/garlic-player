@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.sagiadinos.garlic.player" android:versionName="v0.4.0.575" android:versionCode="575" android:installLocation="auto">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.sagiadinos.garlic.player" android:versionName="v0.4.0.577" android:versionCode="577" android:installLocation="auto">
   <!--
     niko:  android:usesCleartextTraffic="true"
     for Android10  android:requestLegacyExternalStorage="true"
 -->
-  <application android:requestLegacyExternalStorage="true" android:hardwareAccelerated="true" android:name="org.qtproject.qt5.android.bindings.QtApplication" android:label="GPlayer" android:icon="@drawable/icon">
+  <application android:hardwareAccelerated="true" android:name="org.qtproject.qt5.android.bindings.QtApplication" android:label="GPlayer" android:icon="@drawable/icon">
     <activity android:configChanges="orientation|uiMode|screenLayout|screenSize|smallestScreenSize|layoutDirection|locale|fontScale|keyboard|keyboardHidden|navigation" android:name="com.sagiadinos.garlic.player.java.GarlicActivity" android:label="GPlayer" android:screenOrientation="unspecified" android:launchMode="singleTop">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
