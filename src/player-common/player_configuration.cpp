@@ -11,6 +11,8 @@ void PlayerConfiguration::determineInitConfigValues()
     MyMainConfiguration->determinePlayerName();
     if (!launcher_version.isEmpty())
     {
+        // L is needed temporary by SmilControl-CMS to determine correct build number for
+        // releasing screen time functionality Nov 2021
         MyMainConfiguration->setAdditionalVersion("L" + launcher_version);
         qInfo(System) << "Launcher version: " << launcher_version;
     }
@@ -79,7 +81,7 @@ QString PlayerConfiguration::determineDefaultContentUrlName()
 
 QString PlayerConfiguration::determineDefaultContentUrl()
 {
-    QString protocol = "http";
+    QString protocol = "https";
     QString url      = "indexes.smil-control.com";
     QString tmp      = "";
 
@@ -118,18 +120,15 @@ void PlayerConfiguration::determineUuid()
         return;
     }
 
-    // if launcher has not an uuid use from pla
-    if (!MyMainConfiguration->getUuid().isEmpty())
+    // if launcher has not an uuid and player has one use from player
+    if (!MyMainConfiguration->getUuid().isEmpty() && !MyMainConfiguration->getUuid().isEmpty())
     {
         MyMainConfiguration->setUuid(MyMainConfiguration->getUuid());
         return;
     }
 
-    if(MyMainConfiguration->getUuid().isEmpty())
-    {
-        MyMainConfiguration->setUuid(MyMainConfiguration->createUuid());
-
-    }
+    // create UUID in Player
+    MyMainConfiguration->setUuid(MyMainConfiguration->createUuid());
 }
 
 void PlayerConfiguration::determineSmilIndexUri()

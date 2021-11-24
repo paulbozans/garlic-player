@@ -34,6 +34,11 @@ bool AndroidManager::hasLauncher()
     return is;
 }
 
+void AndroidManager::fetchDeviceInformation()
+{
+    MyActivity.callMethod<void>("fetchDeviceInformation");
+}
+
 bool AndroidManager::checkPermissiones()
 {
     auto  result = QtAndroid::checkPermission(QString("android.permission.WRITE_EXTERNAL_STORAGE"));
@@ -77,7 +82,7 @@ void AndroidManager::sendCloseCorrect()
 QString AndroidManager::getLauncherVersion()
 {
     QAndroidJniObject s = MyActivity.callObjectMethod<jstring>("getLauncherVersion");
-    return s.toString();
+    return launcher_name+"-"+s.toString();
 }
 
 QString AndroidManager::getLauncherName()

@@ -56,7 +56,6 @@ int main(int argc, char *argv[])
     MyAndroidManager->disableScreenSaver();
 #endif
 
-
     MainConfiguration    *MyMainConfiguration   = new MainConfiguration(
                                                         new QSettings(QSettings::IniFormat, QSettings::UserScope, "SmilControl", "garlic-player"),
                                                         PlayerConfiguration::determineDefaultAppName(),
@@ -76,11 +75,17 @@ int main(int argc, char *argv[])
 #if defined Q_OS_ANDROID
     if (MyAndroidManager->hasLauncher())
     {
+        MyAndroidManager->fetchDeviceInformation();
+        // needed for launcher stuff to init or fetch
+        QTime dieTime= QTime::currentTime().addSecs(5);
+        while (MyAndroidManager->getUUIDFromLauncher().isEmpty() && QTime::currentTime() < dieTime)
+        {
+            QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
+        }
         MyLibFacade->toggleLauncher(MyAndroidManager->hasLauncher());
         MyPlayerConfiguration->setHasLauncher(MyAndroidManager->hasLauncher());
 
-        if (MyAndroidManager->getLauncherName() == "garlic")
-            MyPlayerConfiguration->setUuidFromLauncher(MyAndroidManager->getUUIDFromLauncher());
+        MyPlayerConfiguration->setUuidFromLauncher(MyAndroidManager->getUUIDFromLauncher());
 
         MyPlayerConfiguration->setSmilIndexUriFromLauncher(MyAndroidManager->getSmilIndexFromLauncher());
         MyPlayerConfiguration->setVersionFromLauncher(MyAndroidManager->getLauncherVersion());
@@ -89,7 +94,7 @@ int main(int argc, char *argv[])
     setGlobalLibFaceForJava(MyLibFacade);
 #endif
 
-    // This inits must be after Launcher inits
+    // This must can only be be done after Launcher inits
     MyPlayerConfiguration->determineInitConfigValues();
 
     MyLibFacade->init(MyMainConfiguration);
