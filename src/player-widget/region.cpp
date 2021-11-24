@@ -66,9 +66,8 @@ void TRegion::stopShowMedia(BaseMedia *media)
 
     if (MyMedia->getSmilMedia() != media)
     {
-        if (MyMedia->getSmilMedia()->objectName() != media->objectName())
-            secureStopDisplayingMedia(MyMediaFactory.initMedia(media));
-        return;
+//        return;
+        secureStopDisplayingMedia(MyMediaFactory.initMedia(media));
     }
 
     secureStopDisplayingMedia(MyMedia);
